@@ -1,7 +1,10 @@
 
 
-all: main.c
-	gcc -o main main.c
+all: objects
+	gcc -o main *.o
+
+objects: main.c pressure.c
+	gcc -c main.c pressure.c
 
 clean:
-	rm -f main
+	rm -f main *.o
